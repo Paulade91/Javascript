@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+
+    <script>
+        // 🔢 Assignment 1: Multiplication Table
+        function multiplicationTable(number) {
+            for (let i = 1; i <= 12; i++) {
+                console.log(`${number} x ${i} = ${number * i}`);
+            }
+        }
+        // Test:
+        multiplicationTable(5);
+
+        // 🍛 Assignment 2: Restaurant Daily Specials
+        function dailySpecials(days) {
+            let count = 1;
+            while (count <= days) {
+                console.log("Today's Special: Fried Rice");
+                count++;
+            }
+        }
+        // Test:
+        dailySpecials(3);
+
+        // 🎢 Assignment 3: Rollercoaster Ride
+        function rollercoasterRide(wantsToRideAgain) {
+            let rideCount = 0;
+            do {
+                rideCount++;
+                console.log(`Ride ${rideCount}: Wheee!`);
+            } while (wantsToRideAgain && rideCount < 3); // simulate max 3 rides
+        }
+        // Test:
+        rollercoasterRide(true);
+
+        // 👨‍👩‍👧‍👦 Assignment 4: Family Object using for...in
+        function displayFamilyRoles(family) {
+            for (let role in family) {
+                console.log(`${role}: ${family[role]}`);
+            }
+        }
+        // Test:
+        displayFamilyRoles({ father: "John", mother: "Jane", son: "Tom" });
+
+        // 👕 Assignment 5: Laundry Day using for...of
+        function laundryDay(clothes) {
+            for (let item of clothes) {
+                console.log(`Washing: ${item}`);
+            }
+        }
+        // Test:
+        laundryDay(["Shirt", "Jeans", "Socks"]);
+
+        // 🎉 Assignment 6: Break at the Party
+        function playSongs() {
+            for (let song = 1; song <= 10; song++) {
+                if (song === 6) {
+                    console.log("Stopping the music at song 6!");
+                    break;
+                }
+                console.log(`Playing song ${song}`);
+            }
+        }
+        // Test:
+        playSongs();
+
+        // 🏀 Assignment 7: Skip Injured Players
+        function skipInjuredPlayers() {
+            for (let player = 1; player <= 10; player++) {
+                if (player === 4 || player === 7) {
+                    continue;
+                }
+                console.log(`Player ${player} is ready to play.`);
+            }
+        }
+        // Test:
+        skipInjuredPlayers();
+
+        // 🧮 Assignment 8: Students' Scores
+        function checkScores(scores) {
+            for (let score of scores) {
+                if (score >= 40) {
+                    console.log(`Score ${score}: Pass`);
+                } else {
+                    console.log(`Score ${score}: Fail`);
+                }
+            }
+        }
+        // Test:
+        checkScores([35, 78, 50, 39, 90]);
+
+        // 🧠 Assignment 9: Prime Number Checker
+        function isPrime(number) {
+            if (number < 2) {
+                console.log(`${number} is not a prime number.`);
+                return;
+            }
+            for (let i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i === 0) {
+                    console.log(`${number} is not a prime number.`);
+                    return;
+                }
+            }
+            console.log(`${number} is a prime number.`);
+        }
+        // Test:
+        isPrime(17);
+        isPrime(18);
+
+    </script>
+</body>
+
+</html>
