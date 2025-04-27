@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmetic Calculator</title>
+    <style>
+        body {
+            background: #f5f5f5;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        .answer {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            min-height: 30px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .button button {
+            margin: 5px 3px;
+            padding: 10px 15px;
+            font-size: 1rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="answer" id="answer"></div>
+
+        <div class="first_add">
+            <input type="text" id="first_number" placeholder="Enter first number">
+        </div>
+
+        <div class="second_add">
+            <input type="text" id="second_number" placeholder="Enter second number">
+        </div>
+
+        <div class="button">
+            <button onclick="addMe()">Add</button>
+            <button onclick="subtractMe()">Subtract</button>
+            <button onclick="multiplyMe()">Multiply</button>
+            <button onclick="divideMe()">Divide</button>
+            <button onclick="powerMe()">Power</button>
+        </div>
+    </div>
+
+    <script>
+        function addMe() {
+            let firstnumber = parseFloat(document.getElementById("first_number").value);
+            let lastnumber = parseFloat(document.getElementById("second_number").value);
+            let answer = `${firstnumber} + ${lastnumber} = ${firstnumber + lastnumber}`;
+            document.getElementById("answer").textContent = answer;
+        }
+
+        function subtractMe() {
+            let firstnumber = parseFloat(document.getElementById("first_number").value);
+            let lastnumber = parseFloat(document.getElementById("second_number").value);
+            let answer = `${firstnumber} - ${lastnumber} = ${firstnumber - lastnumber}`;
+            document.getElementById("answer").textContent = answer;
+        }
+
+        function multiplyMe() {
+            let firstnumber = parseFloat(document.getElementById("first_number").value);
+            let lastnumber = parseFloat(document.getElementById("second_number").value);
+            let answer = `${firstnumber} × ${lastnumber} = ${firstnumber * lastnumber}`;
+            document.getElementById("answer").textContent = answer;
+        }
+
+        function divideMe() {
+            let firstnumber = parseFloat(document.getElementById("first_number").value);
+            let lastnumber = parseFloat(document.getElementById("second_number").value);
+
+            if (lastnumber === 0) {
+                document.getElementById("answer").textContent = "Cannot divide by zero!";
+            } else {
+                let answer = `${firstnumber} ÷ ${lastnumber} = ${firstnumber / lastnumber}`;
+                document.getElementById("answer").textContent = answer;
+            }
+        }
+
+        function powerMe() {
+            let firstnumber = parseFloat(document.getElementById("first_number").value);
+            let lastnumber = parseFloat(document.getElementById("second_number").value);
+            let answer = `${firstnumber} ^ ${lastnumber} = ${firstnumber ** lastnumber}`;
+            document.getElementById("answer").textContent = answer;
+        }
+    </script>
+
+</body>
+
+</html>

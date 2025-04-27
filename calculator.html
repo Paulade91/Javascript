@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmetic Calculator</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="answer" id="answer"></div>
+
+        <div class="first_add">
+            <input type="text" id="first_number" placeholder="Enter first number">
+        </div>
+
+        <div class="second_add">
+            <input type="text" id="second_number" placeholder="Enter second number">
+        </div>
+
+        <div class="button">
+            <button onclick="addMe()">Add</button>
+            <button onclick="subtractMe()">Subtract</button>
+            <button onclick="multiplyMe()">Multiply</button>
+            <button onclick="divideMe()">Divide</button>
+            <button onclick="powerMe()">Power</button>
+        </div>
+    </div>
+
+    <script>
+        function addMe() {
+            let firstnumber = parseFloat(document.getElementById("first_number").value);
+            let lastnumber = parseFloat(document.getElementById("second_number").value);
+            let answer = `${firstnumber} + ${lastnumber} = ${firstnumber + lastnumber}`;
+            document.getElementById("answer").textContent = answer;
+        }
+
+        function subtractMe() {
+            let firstnumber = parseFloat(document.getElementById("first_number").value);
+            let lastnumber = parseFloat(document.getElementById("second_number").value);
+            let answer = `${firstnumber} - ${lastnumber} = ${firstnumber - lastnumber}`;
+            document.getElementById("answer").textContent = answer;
+        }
+
+        function multiplyMe() {
+            let firstnumber = parseFloat(document.getElementById("first_number").value);
+            let lastnumber = parseFloat(document.getElementById("second_number").value);
+            let answer = `${firstnumber} × ${lastnumber} = ${firstnumber * lastnumber}`;
+            document.getElementById("answer").textContent = answer;
+        }
+
+        function divideMe() {
+            let firstnumber = parseFloat(document.getElementById("first_number").value);
+            let lastnumber = parseFloat(document.getElementById("second_number").value);
+
+            if (lastnumber === 0) {
+                document.getElementById("answer").textContent = "Cannot divide by zero!";
+            } else {
+                let answer = `${firstnumber} ÷ ${lastnumber} = ${firstnumber / lastnumber}`;
+                document.getElementById("answer").textContent = answer;
+            }
+        }
+
+        function powerMe() {
+            let firstnumber = parseFloat(document.getElementById("first_number").value);
+            let lastnumber = parseFloat(document.getElementById("second_number").value);
+            let answer = `${firstnumber} ^ ${lastnumber} = ${firstnumber ** lastnumber}`;
+            document.getElementById("answer").textContent = answer;
+        }
+    </script>
+
+</body>
+
+</html>
