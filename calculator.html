@@ -26,6 +26,7 @@
             <button onclick="multiplyMe()">Multiply</button>
             <button onclick="divideMe()">Divide</button>
             <button onclick="powerMe()">Power</button>
+            <button onclick="clearAll()">Clear</button>
         </div>
     </div>
 
@@ -68,6 +69,11 @@
             let lastnumber = parseFloat(document.getElementById("second_number").value);
             let answer = `${firstnumber} ^ ${lastnumber} = ${firstnumber ** lastnumber}`;
             document.getElementById("answer").textContent = answer;
+        }
+        function clearAll() {
+            document.getElementById("first_number").value = "";
+            document.getElementById("second_number").value = "";
+            document.getElementById("answer").textContent = "";
         }
     </script>
 
